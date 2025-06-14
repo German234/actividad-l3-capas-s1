@@ -4,7 +4,7 @@ import com.mrbeans.labo.clubes.dtos.ClubResponseDto;
 import com.mrbeans.labo.clubes.dtos.CreateClubDto;
 import com.mrbeans.labo.clubes.service.ClubService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,12 +16,18 @@ public class ClubController {
     private ClubService clubService;
 
     @PostMapping
-    public void createClub(@RequestBody CreateClubDto createClubDto) {
+    public ResponseEntity<Object> createClub(@RequestBody CreateClubDto createClubDto) {
         clubService.createClub(createClubDto);
+        return ResponseEntity.ok("Created club successfully");
     }
 
     @GetMapping("country/{country}")
     public List<ClubResponseDto> getClubsByCountry(@PathVariable String country) {
         return clubService.findByCountry(country);
+    }
+
+    @GetMapping("search")
+    public List<ClubResponseDto> getClubsByName(@RequestParam(value = "name", defaultValue = "Real Madrid") String name) {
+        return clubService.findByName(name);
     }
 }

@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface IClubRepository extends JpaRepository<ClubEntity, Long> {
     List<ClubEntity> findByCountry(String country);
+    List<ClubEntity> findByName(String name);
 }

@@ -30,6 +30,21 @@ public class ClubService {
                 }).toList();
     }
 
+    public List<ClubResponseDto> findByName(String name) {
+        return clubRepository.findByName(name)
+                .stream()
+                .map(club -> {
+                    ClubResponseDto ClubResponseDto = new ClubResponseDto();
+                    ClubResponseDto.setId(club.getId());
+                    ClubResponseDto.setName(club.getName());
+                    ClubResponseDto.setCountry(club.getCountry());
+                    ClubResponseDto.setCoach(club.getCoach());
+                    ClubResponseDto.setTitles(club.getTitles());
+
+                    return ClubResponseDto;
+                }).toList();
+    }
+
     public void createClub(CreateClubDto createClubDto) {
 
         ClubEntity clubEntity = new ClubEntity();
@@ -40,6 +55,8 @@ public class ClubService {
 
         clubRepository.save(clubEntity);
     }
+
+
 
 
 
