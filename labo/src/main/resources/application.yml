@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: CirculosEstudioBackend
+    name: labo
 
   datasource:
     url: jdbc:postgresql://localhost:5432/Clubes
