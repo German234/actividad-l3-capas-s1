@@ -4,7 +4,7 @@
 
   **Carnet:** 00048322  
 
-  **Endpoint trabajado:** ´/api/clubs/country/{country}´
+  **Endpoint trabajado:** `/api/clubs/country/{country}`
 
 - **Nombre:** German David Santos 
 
@@ -12,4 +12,4 @@
 
   **Grupo de Laboratorio:** Jueves 9AM
 
-  **Endpoint trabajado:** ´GET /api/clubs/search´ y ´POST /api/clubs´
+  **Endpoint trabajado:** `GET /api/clubs/search` y `POST /api/clubs`
