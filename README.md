@@ -27,34 +27,3 @@ cd labo
 ### Ejecuta la aplicación.
 Springboot creará las tablas automaticamente 
 
-# Endpoints
-## Crear un Club
-Método: POST
-
-URL: /api/clubs
-
-Body: JSON con los datos del club
-
-Descripción: Crea un nuevo club.
-
-Ejemplo de request:
-
-```json
-{
-  "nombre": "Club Ejemplo",
-  "pais": "Argentina"
-}
-```
-
-## Obtener Clubes por País
-Método: GET
-
-URL: /api/clubs/country/{country}
-
-Parámetro: country (nombre del país)
-
-Respuesta: Lista de clubes del país especificado 
-Ejemplo de request:
-```Shell
-GET /api/clubs/country/Argentina
-```
